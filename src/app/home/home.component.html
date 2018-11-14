@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Model</td>
+    <td>Logo MimeType</td>
+    <td>Logo</td>    
+  </tr>
+  <tr *ngFor = "let hf of hardwareFamilies">
+    <td>{{hf.id}}</td>
+    <td>{{hf.name}}</td>
+    <td>{{hf.model}}</td>
+    <td>{{hf.typeMime}}</td>
+    <td>
+        <img *ngIf="hf.logo" [src]="sanitizer.bypassSecurityTrustUrl('data: image/jpg;base64,' + hf.logo)" />
+    </td>    
+  </tr>
+</table>
