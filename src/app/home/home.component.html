@@ -1,18 +1,32 @@
-<table>
-  <tr>
-    <td>Id</td>
-    <td>Name</td>
-    <td>Model</td>
-    <td>Logo MimeType</td>
-    <td>Logo</td>    
-  </tr>
-  <tr *ngFor = "let hf of hardwareFamilies">
-    <td>{{hf.id}}</td>
-    <td>{{hf.name}}</td>
-    <td>{{hf.model}}</td>
-    <td>{{hf.typeMime}}</td>
-    <td>
-        <img *ngIf="hf.logo" [src]="sanitizer.bypassSecurityTrustUrl('data: image/jpg;base64,' + hf.logo)" />
-    </td>    
-  </tr>
-</table>
+<div class="container">
+  <h1>
+    <i class="fa fa-american-sign-language-interpreting fa-2x" aria-hidden="true"> </i>
+
+  </h1>
+
+  <br>
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Model</th>
+            <th nowrap>Logo MimeType</th>
+            <th>Logo</th>  
+        </tr>
+      </thead>
+      <tbody>      
+        <tr *ngFor = "let hf of hardwareFamilies">
+          <td>{{hf.id}}</td>
+          <td>{{hf.name}}</td>
+          <td>{{hf.model}}</td>
+          <td>{{hf.typeMime}}</td>
+          <td>
+              <img *ngIf="hf.logo" [src]="sanitizer.bypassSecurityTrustUrl('data: image/jpg;base64,' + hf.logo)" alt="..." class="rounded float-right" style="width: 100px;"/>
+          </td>    
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
